@@ -10,7 +10,7 @@ export const resources = [
     title: "Codier",
     content:
       "Codier connects front-end developers to create, share and challenge one another.",
-    link: "coder.io",
+    link: "codier.io",
     url: "https://codier.io/",
   },
   {

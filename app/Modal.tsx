@@ -40,7 +40,7 @@ export default function Modal({title, content, link, url, onClose, showModal}: P
               href={url}
               target="_blank"
             >
-              {link}
+              👉🏻 {link}
             </Link>
           </p>
           <AlertDialogFooter>
