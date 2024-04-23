@@ -3,6 +3,8 @@ import LinkCard from './LinkCard';
 import { resources } from './data';
 import Link from 'next/link';
 import CardInfo from './CardInfo';
+import Image from 'next/image';
+import GithubIcon from '../public/github.png'
 
 type Props = {}
 
@@ -18,15 +20,29 @@ export default function HomePage({}: Props) {
         </p>
         <p className="bg-muted px-2 rounded-sm">
           made by{" "}
-          <span className='underline cursor-pointer'>
-            <Link
-              href="https://twitter.com/CodingGimmic"
-              target="_blank"
-            >@codinggimmic</Link>
+          <span className="underline cursor-pointer">
+            <Link href="https://twitter.com/CodingGimmic" target="_blank">
+              @codinggimmic
+            </Link>
           </span>
         </p>
       </div>
       <CardInfo />
+      <div className="flex items-center justify-center">
+          <Link
+            href="https://github.com/Jahkamso/frontend-finder"
+            target="_blank"
+          >
+        <div className="flex items-center gap-3 bg-muted py-1 px-3 cursor-pointer rounded-full">
+          <h3>Source code</h3>
+            <Image
+              className="w-[30px] h-[30px]"
+              src={GithubIcon}
+              alt="Github icon"
+            />
+        </div>
+          </Link>
+      </div>
     </div>
   );
 }

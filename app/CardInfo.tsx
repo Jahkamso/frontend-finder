@@ -7,38 +7,38 @@ import Modal from "./Modal";
 
 type Props = {};
 
-type ResourceProps = {
-  title: string;
-  content: string;
-  link: string;
-  url: string;
-};
+// type ResourceProps = {
+//   title: string;
+//   content: string;
+//   link: string;
+//   url: string;
+// };
 
 export default function CardInfo({}: Props) {
-  const [selectedResource, setSelectedResource] =
-    useState<ResourceProps | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [selectedResource, setSelectedResource] =
+  //   useState<ResourceProps | null>(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCardClick = (resource: ResourceProps) => {
-    setSelectedResource(resource);
-    setIsModalOpen(true);
-  };
+  // const handleCardClick = (resource: ResourceProps) => {
+  //   setSelectedResource(resource);
+  //   setIsModalOpen(true);
+  // };
 
-  const handleCloseModal = () => {
-    setSelectedResource(null);
-    setIsModalOpen(false);
-  };
+  // const handleCloseModal = () => {
+  //   setSelectedResource(null);
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {resources.map((data, index) => (
-          <div key={index} onClick={() => handleCardClick(data)}>
-            <LinkCard title={data.title} content={data.content} />
+          <div key={index}>
+            <LinkCard title={data.title} content={data.content} url={data.url} />
           </div>
         ))}
       </div>
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <Modal
           title={selectedResource ? selectedResource.title : ""}
           content={selectedResource ? selectedResource.content : ""}
@@ -47,7 +47,7 @@ export default function CardInfo({}: Props) {
           onClose={handleCloseModal}
           showModal={isModalOpen}
         />
-      )}
+      )} */}
     </div>
   );
 }
